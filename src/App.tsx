@@ -1,11 +1,11 @@
+import { AuthHome, UnAuthHome } from "./pages";
 import { Route, Routes } from "react-router-dom";
-
-import AuthHome from "./pages/AuthHome";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AuthHome />} />
+      <Route path="/" element={<UnAuthHome />} />
+      <Route path="/home" element={<AuthHome />} />
     </Routes>
   );
 }

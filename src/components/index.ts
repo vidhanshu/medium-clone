@@ -1,6 +1,8 @@
+import AuthNav from "./AuthNav";
 import AuthOptions from "./AuthOptions";
 import BlogCard from "./BlogCard";
 import Button from "./Button";
+import CategorySlider from "./CategorySlider";
 import Container from "./Container";
 import Input from "./Input";
 import LogoWithName from "./LogoWithName";
@@ -19,5 +21,7 @@ export {
   Modal,
   AuthOptions,
   SeperatorWithTitle,
-  Input
+  Input,
+  AuthNav,
+  CategorySlider
 };
