@@ -20,8 +20,8 @@ function TrendingBlogCard({
   user,
 }: TrendingBlogCardProps) {
   return (
-    <div className="flex gap-x-4">
-      <div className="basis-[110px] text-5xl text-slate-300">0{id}</div>
+    <div className="flex gap-x-2">
+      <div className="basis-[70px] text-5xl text-slate-300 md:text-4xl">0{id}</div>
       <div className="flex flex-col gap-y-2">
         <div className="flex items-center gap-x-2">
           <img

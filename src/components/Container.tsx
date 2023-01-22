@@ -9,14 +9,21 @@ const PADDINGS = {
 type ContainerProp = AllHTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   py?: "pylg" | "pyxl" | "py2xl"; //padding y large
+  classInnerName?: string;
 };
-function Container({ children, py, className, ...props }: ContainerProp) {
+function Container({
+  children,
+  py,
+  className,
+  classInnerName = "",
+  ...props
+}: ContainerProp) {
   return (
     <div
       {...props}
-      className={`p-4 ${py ? PADDINGS[py] : ''} ${className ? className : ""}`}
+      className={`p-4 ${py ? PADDINGS[py] : ""} ${className ? className : ""}`}
     >
-      {children}
+      <div className={`${classInnerName} sm:max-w-[95%] md:max-w-[90%] mx-auto`}>{children}</div>
     </div>
   );
 }
