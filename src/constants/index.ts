@@ -159,3 +159,15 @@ export const TRENDING_TOPICS = [
   "React",
   "Writing",
 ];
+
+export const MENU_FOOTER_OPTIONS = [
+  "Help",
+  "Status",
+  "Writers",
+  "Bloggers",
+  "Careers",
+  "Privacy",
+  "Terms",
+  "About",
+  "Text-to-Speech",
+];
