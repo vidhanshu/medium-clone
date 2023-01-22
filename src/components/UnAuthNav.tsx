@@ -4,7 +4,10 @@ import Button from "./Button";
 import Container from "./Container";
 import LogoWithName from "./LogoWithName";
 
-function UnAuthNav() {
+type UnAuthNavProps = {
+  openModal: () => void;
+};
+function UnAuthNav({openModal}:UnAuthNavProps) {
   const [exceed, setExceed] = useState(false);
 
   useEffect(() => {
@@ -23,7 +26,9 @@ function UnAuthNav() {
 
   return (
     <Container
-      className={`border-b-[1px] border-black bg-y ${exceed ? "bg-white" : ""} sticky top-0 z-10`}
+      className={`border-b-[1px] border-black bg${
+        exceed ? "-white" : "-y"
+      } sticky top-0 z-10`}
       classInnerName={`flex items-center justify-between`}
     >
       <LogoWithName />
@@ -34,7 +39,7 @@ function UnAuthNav() {
           <li className="hidden md:block">Write</li>
           <li className="hidden md:block">Sign In</li>
         </ul>
-        <Button className={exceed ? "bg-g" : ""}>Get started</Button>
+        <Button onClick={openModal} className={exceed ? "bg-g" : ""}>Get started</Button>
       </nav>
     </Container>
   );
