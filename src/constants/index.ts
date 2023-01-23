@@ -1,3 +1,6 @@
+export const PROFILE =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLe5PABjXc17cjIMOibECLM7ppDwMmiDg6Dw&usqp=CAU";
+
 export const TRENDING_BLOGS = [
   {
     id: 1,
@@ -170,4 +173,42 @@ export const MENU_FOOTER_OPTIONS = [
   "Terms",
   "About",
   "Text-to-Speech",
+];
+
+export const PEOPLE = [
+  {
+    id: 1,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 2,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 3,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 4,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 5,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 6,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
+  {
+    id: 7,
+    name: "Siddharth Malhotra",
+    profile_image: PROFILE,
+  },
 ];

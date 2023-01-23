@@ -42,7 +42,7 @@ function CategorySlider({ categories }: CategorySliderProps) {
           const { scrollLeft } = e.target as HTMLDivElement;
           setScrollX(scrollLeft);
         }}
-        className="flex gap-x-10 border-red-600 max-w-full overflow-auto no-scrollbar pl-16 px-6 py-1 scroll-smooth"
+        className="flex gap-x-10 border-red-600 max-w-full overflow-auto no-scrollbar px-16 py-1 scroll-smooth"
       >
         {categories.map((category, index) => (
           <p

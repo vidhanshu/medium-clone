@@ -13,14 +13,65 @@ function AuthHome() {
   return (
     <>
       <AuthNav />
-      <Container className="py-0">
+      <Container className="py-0 sticky top-0 bg-white px-0 z-[21]">
         <CategorySlider categories={TRENDING_TOPICS} />
       </Container>
-      <Container>
+      
+      {/* This will be shown if the width > 924px */}
+      <Container
+        className="hidden lg:inline-block lg:max-w-[60%] align-top"
+        py="pylg"
+        classInnerName="flex flex-col gap-y-8"
+      >
         {BLOGS.map((e) => {
-          return <AuthBlogCard {...e} />;
+          return <AuthBlogCard key={e.id} {...e} />;
         })}
       </Container>
+      {/* This will be shown if the width > 924px */}
+
+      <Container
+        py="pylg"
+        className="bb1 lg:border-none lg:max-w-[40%] lg:inline-block lg:sticky lg:top-[75px] align-top"
+      >
+        <p className="font-medium mb-5">Recommended topics</p>
+        <div className="flex flex-wrap gap-2 pb-5 lg:bb1">
+          {TRENDING_TOPICS.map((e, idx) => {
+            return (
+              <div
+                key={idx}
+                className="border-[1px] cursor-pointer w-fit py-2 px-4 text-sm text-gray-500"
+              >
+                {e}
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex-wrap hidden lg:flex mt-5 lg:basis-[60%] lg:gap-2 sticky top-0">
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Help</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Status</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Write</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Blog</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Careers</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Privacy</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">Terms</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">About</p>
+          <p className="text-gray-500 pr-4 text-xs cursor-pointer hover:underline font-semibold">
+            Text to speech
+          </p>
+        </div>
+      </Container>
+
+      {/* This will be shown if the width < 924px */}
+      <Container
+        className="lg:hidden"
+        py="pylg"
+        classInnerName="flex flex-col gap-y-8"
+      >
+        {BLOGS.map((e) => {
+          return <AuthBlogCard key={e.id} {...e} />;
+        })}
+      </Container>
+      {/* This will be shown if the width < 924px */}
     </>
   );
 }
@@ -59,7 +110,7 @@ const AuthBlogCard = ({
   }, []);
 
   return (
-    <div className="bb1 mb-4 py-4">
+    <div className="bb1 mb-5 py-4">
       <div className="flex flex-col gap-y-2 sm:gap-y-1">
         <div className="flex items-center gap-x-2">
           <img
@@ -74,17 +125,17 @@ const AuthBlogCard = ({
           </p>
         </div>
 
-        <div className="flex gap-x-2">
+        <div className="flex gap-x-2 mt-1">
           <div>
-            <h1 className="text-base font-extrabold md:text-xl lg:text-base  lg:font-bold lgx:text-xl lgx:font-extrabold">
+            <h1 className="text-base font-extrabold md:text-xl lg:text-base  lg:font-bold lgx:text-xl lgx:font-extrabold mb-4">
               {_TEXT_SHORTNER(content, isDesktop ? 100 : 50)}
             </h1>
-            <p className="text-gray-500 hidden md:block lg:text-sm lgx:text-base">
-              {_TEXT_SHORTNER(content, 100)}
+            <p className="text-gray-500 hidden sm:block lg:text-sm lgx:text-base">
+              {_TEXT_SHORTNER(content, 200)}
             </p>
           </div>
           <img
-            className="w-[100px] h-[50px] sm:w-[150px] md:w-[200px] md:h-[150px]"
+            className="w-[100px] h-[50px] sm:w-[150px] sm:h-[100px] md:w-[200px] md:h-[150px]"
             src={
               "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
             }
@@ -95,7 +146,7 @@ const AuthBlogCard = ({
 
       <p className="mt-4 text-[.8rem] text-gray-500 flex items-center justify-between">
         <span>
-          <span className="bg-gray-200 px-2 py-[2px] rounded-full font-light">
+          <span className="bg-gray-200 px-2 py-[2px] rounded-full text-black">
             {tags[1]}
           </span>{" "}
           . {min_to_read} min read
