@@ -4,12 +4,14 @@ import BlogCard from "./BlogCard";
 import Button from "./Button";
 import CategorySlider from "./CategorySlider";
 import Container from "./Container";
+import Editor from "./Editor";
 import Input from "./Input";
 import LogoWithName from "./LogoWithName";
 import Modal from "./Modal";
 import SeperatorWithTitle from "./SeperatorWithTitle";
 import TrendingBlogCard from "./TrendingBlogCard";
 import UnAuthNav from "./UnAuthNav";
+import WriteBlogNav from "./WriteBlogNav";
 
 export {
   UnAuthNav,
@@ -23,5 +25,7 @@ export {
   SeperatorWithTitle,
   Input,
   AuthNav,
-  CategorySlider
+  CategorySlider,
+  Editor,
+  WriteBlogNav,
 };

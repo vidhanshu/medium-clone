@@ -35,3 +35,9 @@ html {
     }
   }
 }
+
+.ql-editor {
+  max-height: 80vh;
+  height: 80vh !important;
+  overflow-y: auto;
+} 
