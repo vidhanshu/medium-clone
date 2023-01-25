@@ -19,6 +19,12 @@ html {
   .bb1 {
     @apply border-b-[1px];
   }
+  .br1 {
+    @apply border-r-[1px];
+  }
+  .bl1 {
+    @apply border-l-[1px];
+  }
 }
 
 @layer utilities {

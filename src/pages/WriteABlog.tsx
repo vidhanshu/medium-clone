@@ -1,7 +1,5 @@
 import { Container, Editor, WriteBlogNav } from "../components";
 
-import React from "react";
-
 function WriteABlog() {
   return (
     <>

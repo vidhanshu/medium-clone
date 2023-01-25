@@ -6,8 +6,9 @@ import LogoWithName from "./LogoWithName";
 
 type UnAuthNavProps = {
   openModal: () => void;
+  setSignIn: () => void;
 };
-function UnAuthNav({openModal}:UnAuthNavProps) {
+function UnAuthNav({ openModal, setSignIn }: UnAuthNavProps) {
   const [exceed, setExceed] = useState(false);
 
   useEffect(() => {
@@ -34,12 +35,30 @@ function UnAuthNav({openModal}:UnAuthNavProps) {
       <LogoWithName />
       <nav className="flex items-center gap-x-4">
         <ul className="flex text-sm gap-x-4">
-          <li className="hidden sm:block">Our story</li>
-          <li className="hidden md:block">Membership</li>
-          <li className="hidden md:block">Write</li>
-          <li className="hidden md:block">Sign In</li>
+          <li className="hidden sm:block cursor-pointer">Our story</li>
+          <li className="hidden md:block cursor-pointer">Membership</li>
+          <li
+            className="hidden md:block cursor-pointer"
+            onClick={() => {
+              setSignIn();
+              openModal();
+            }}
+          >
+            Write
+          </li>
+          <li
+            className="hidden md:block cursor-pointer"
+            onClick={() => {
+              setSignIn();
+              openModal();
+            }}
+          >
+            Sign In
+          </li>
         </ul>
-        <Button onClick={openModal} className={exceed ? "bg-g" : ""}>Get started</Button>
+        <Button onClick={openModal} className={exceed ? "bg-g" : ""}>
+          Get started
+        </Button>
       </nav>
     </Container>
   );

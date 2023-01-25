@@ -7,13 +7,11 @@ import { AiOutlineDown } from "react-icons/ai";
 import { BsMedium } from "react-icons/bs";
 import Button from "./Button";
 import Container from "./Container";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { _TEXT_SHORTNER } from "../utils";
 
 function WriteBlogNav() {
   const [active, setActive] = useState(false);
-  const [active2, setActive2] = useState(false);
 
   useEffect(() => {
     const handleOutsideClick = (e: any) => {

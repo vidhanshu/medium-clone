@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { BsMedium } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 import { _TEXT_SHORTNER } from "../utils";
 
 function AuthNav() {
@@ -49,7 +50,7 @@ function AuthNav() {
             <ul className="flex flex-col gap-y-4 py-4">
               <li className="px-4">PEOPLE</li>
               <hr />
-              {PEOPLE.slice(0,3).map((e) => {
+              {PEOPLE.slice(0, 3).map((e) => {
                 return (
                   <li
                     className="px-4 flex gap-x-2 items-center text-sm text-black cursor-pointer"
@@ -111,9 +112,11 @@ function AuthNav() {
                 <CiEdit size={23} /> Write
               </li>
               <hr />
-              <li className="cursor-pointer flex gap-x-4 px-4">
-                <CiUser size={23} /> Profile
-              </li>
+              <Link to="/profile">
+                <li className="cursor-pointer flex gap-x-4 px-4">
+                  <CiUser size={23} /> Profile
+                </li>
+              </Link>
               <li className="cursor-pointer flex gap-x-4 px-4">
                 <CiBookmark size={23} /> Lists
               </li>

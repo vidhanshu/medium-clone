@@ -21,7 +21,7 @@ function Modal({ children, onClose, ...props }: ModalProps) {
       <div className="absolute w-full h-full" onClick={onClose}></div>
       <div
         {...props}
-        className="bg-white p-4 rounded-md shadow-md max-w-[600px] w-[97%] max-h-[90%] overflow-auto z-[1]"
+        className={`bg-white p-4 rounded-md shadow-md max-w-[600px] w-[97%] max-h-[90%] overflow-auto z-[1] ${props.className?props.className:''}`}
       >
         <div className="flex justify-end mb-3">
           <RxCross1

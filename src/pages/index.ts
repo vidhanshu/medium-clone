@@ -1,5 +1,6 @@
-import AuthHome from "./AuthHome"
-import UnAuthHome from "./UnAuthHome"
+import AuthHome from "./AuthHome";
+import Profile from "./Profile";
+import UnAuthHome from "./UnAuthHome";
 import WriteABlog from "./WriteABlog";
 
-export { AuthHome, UnAuthHome, WriteABlog };
+export { AuthHome, Profile, UnAuthHome, WriteABlog };

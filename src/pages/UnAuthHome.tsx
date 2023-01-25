@@ -16,7 +16,7 @@ import { useState } from "react";
 function UnAuthHome() {
   const [modal, setModal] = useState(false);
 
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(true);
 
   return (
     <>
@@ -25,6 +25,7 @@ function UnAuthHome() {
         <Modal
           onClose={() => {
             setModal(false);
+            setIsSignUp(true);
           }}
         >
           <AuthOptions
@@ -38,6 +39,9 @@ function UnAuthHome() {
       <UnAuthNav
         openModal={() => {
           setModal(true);
+        }}
+        setSignIn={() => {
+          setIsSignUp(false);
         }}
       />
       <header className="relative z-[1] overflow-hidden">
@@ -145,10 +149,10 @@ function UnAuthHome() {
       >
         <LogoWithName mode="light" />
         <ul className="flex text-sm gap-x-4">
-          <li>About</li>
-          <li>Help</li>
-          <li>Terms</li>
-          <li>Privacy</li>
+          <li className="cursor-pointer hover:underline">About</li>
+          <li className="cursor-pointer hover:underline">Help</li>
+          <li className="cursor-pointer hover:underline">Terms</li>
+          <li className="cursor-pointer hover:underline">Privacy</li>
         </ul>
         <hr />
         <div>

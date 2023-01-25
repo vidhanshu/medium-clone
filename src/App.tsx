@@ -1,4 +1,4 @@
-import { AuthHome, UnAuthHome, WriteABlog } from "./pages";
+import { AuthHome, Profile, UnAuthHome, WriteABlog } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
       <Route path="/" element={<UnAuthHome />} />
       <Route path="/home" element={<AuthHome />} />
       <Route path="/write" element={<WriteABlog />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }

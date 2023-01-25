@@ -11,7 +11,11 @@ type AuthOptionsProps = {
 function AuthOptions({ isSignUp, onChange }: AuthOptionsProps) {
   return (
     <div className="flex flex-col gap-y-10 items-center">
-      <h1 className="font-ci text-5xl font-bold text-center">Join Medium</h1>
+      {isSignUp ? (
+        <h1 className="font-ci text-5xl font-bold text-center">Join Medium</h1>
+      ) : (
+        <h1 className="font-ci text-5xl font-bold text-center">Welcome back to Medium</h1>
+      )}
       {isSignUp ? (
         <form className="flex flex-col items-center gap-y-3">
           <Input placeholder="Username" type="text" />
@@ -23,7 +27,7 @@ function AuthOptions({ isSignUp, onChange }: AuthOptionsProps) {
         <form className="flex flex-col items-center gap-y-3">
           <Input placeholder="Username or Email" type="text" />
           <Input placeholder="Password" type="password" />
-          <Button>Sign up</Button>
+          <Button>Sign in</Button>
         </form>
       )}
       <SeperatorWithTitle>Or</SeperatorWithTitle>
