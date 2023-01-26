@@ -8,10 +8,13 @@ import { BsMedium } from "react-icons/bs";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { _TEXT_SHORTNER } from "../utils";
+import { useNavigate } from "react-router-dom";
 
 function AuthNav() {
   const [active, setActive] = useState(false);
   const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleOutsideClick = (e: any) => {
@@ -27,7 +30,13 @@ function AuthNav() {
   return (
     <div className="px-5 py-1 bb1 flex items-center">
       <div className="flex gap-x-2 items-center basis-[40%]">
-        <BsMedium size={45} />
+        <BsMedium
+          size={45}
+          className="cursor-pointer"
+          onClick={() => {
+            navigate("/home");
+          }}
+        />
         <div className="hidden sm:flex gap-x-2 p-2 py-1 bg-gray-100 rounded-full relative">
           <CiSearch
             className="flex text-sm text-gray-700 gap-x-1 items-center"
@@ -77,7 +86,12 @@ function AuthNav() {
           className="flex sm:hidden text-sm text-gray-500 gap-x-1 items-center"
           size={25}
         />
-        <div className="hidden sm:flex text-sm text-gray-500 gap-x-1 items-center">
+        <div
+          onClick={() => {
+            navigate("/write");
+          }}
+          className="hidden sm:flex text-sm text-gray-500 gap-x-1 items-center cursor-pointer"
+        >
           <CiEdit size={25} />
           Write
         </div>

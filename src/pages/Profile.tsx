@@ -1,6 +1,6 @@
-import { AuthNav, Button, Container, Modal } from "../components";
+import { AuthNav, BlogCard, Button, Container, Modal } from "../components";
 import { BLOGS, PROFILE } from "../constants";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { RiMailAddLine } from "react-icons/ri";
@@ -27,9 +27,7 @@ function Profile() {
                     />
                     <div>
                       <h1 className="text-sm text-gray-600">{e.user.name}</h1>
-                      <p className="text-xs text-gray-500">
-                        {e.content}
-                      </p>
+                      <p className="text-xs text-gray-500">{e.content}</p>
                     </div>
                   </span>
                   <Button className="bg-g">Follow</Button>
@@ -40,18 +38,57 @@ function Profile() {
         </Modal>
       )}
       <AuthNav />
-      <Container
-        className="br1 inline-block w-[60%] align-top"
-        classInnerName="flex justify-between items-center"
-      >
-        <h1 className="font-semibold text-4xl">Vidhanshu Borade</h1>
-        <HiOutlineDotsHorizontal
-          size={25}
-          color="gray"
-          className="cursor-pointer"
-        />
+      <Container className="br1 lg:inline-block lg:w-[60%] lg:align-top">
+        <div>
+          <div className="flex justify-between items-center mb-5">
+            <h1 className="hidden sm:block font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              Vidhanshu Borade
+            </h1>
+            <div className="sm:hidden font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl flex gap-x-4">
+              <img src={PROFILE} alt="" className="w-14 h-14 rounded-full" />
+              <div>
+                <h1 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1">
+                  Vidhanshu Borade
+                </h1>
+                <p className="text-sm font-normal text-gray-500">34.2k Followers</p>
+              </div>
+            </div>
+            <div className="flex gap-x-2">
+              <Button className="bg-g hidden sm:block lg:hidden">Follow</Button>
+              <Button className="bg-g hidden sm:block lg:hidden">
+                <RiMailAddLine />
+              </Button>
+              <HiOutlineDotsHorizontal
+                size={25}
+                color="gray"
+                className="cursor-pointer self-center"
+              />
+            </div>
+          </div>
+          <div className="sm:hidden flex justify-between gap-x-2">
+            <Button className="bg-g basis-[100%]">Follow</Button>
+            <Button className="bg-g">
+              <RiMailAddLine />
+            </Button>
+          </div>
+        </div>
+        <div className="bb1 mb-10">
+          <h1 className="py-2 text-gray-500 cursor-pointer border-black border-b-[2px] max-w-fit">
+            Home
+          </h1>
+        </div>
+        <div className="flex flex-col gap-y-6">
+          {BLOGS.map((e) => (
+            <>
+              <BlogCard {...e} />
+              <hr className="mt-4" />
+            </>
+          ))}
+        </div>
       </Container>
-      <Container className="inline-block w-[40%] sticky top-0">
+      {/* profile */}
+      <Container className="w-[40%] sticky top-0 hidden lg:inline-block">
+        {/* <div className="max-w-[70%]"> */}
         <img src={PROFILE} className="w-h-20 h-20 rounded-full mb-2" alt="" />
         <h1 className="font-semibold mb-1">Vidhanshu Borade</h1>
         <p className="text-gray-500 mb-4">2.7k Followers</p>
@@ -81,6 +118,7 @@ function Profile() {
             See all
           </h1>
         </div>
+        {/* </div> */}
       </Container>
     </>
   );
